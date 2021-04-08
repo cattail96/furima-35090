@@ -2,21 +2,21 @@
 
 ## usersテーブル
 
-| Column         | Type           | Options     |
-| -------------- | -------------- | ----------- |
-| nick_name      | string         | null: false |
-| email          | string         | null: false |
-| password       | string         | null: false |
-| user_name      | string         | null: false |
-| pronunciation  | string         | null: false |
-| birthday       | string         | null: false |
+| Column              | Type           | Options      |
+| ------------------- | -------------- | ------------ |
+| nick_name           | string         | null: false  |
+| email               | string         | unique: true |
+| encrypyed_password  | string         | null: false  |
+| family_name         | string         | null: false  |
+| first_name          | string         | null: false  |
+| last_name_kana      | string         | null: false  |
+| first_name_kana     | string         | null: false  |
+| birthday            | date           | null: false  |
 
 ### Association
 
 - has_many :items
 - has_many :buyings
-- has_one :address
-
 
 ## itemsテーブル
 
@@ -36,24 +36,23 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :buying
+- has_one :buying
 
 ## addressesテーブル
 
 | Column        | Type            | Options                        |
 | ------------- | --------------- | ------------------------------ |
 | postcode      | string          | null: false, foreign_key: true |
-| status        | string          | null: false, foreign_key: true |
+| prefecture    | integer         | null: false, foreign_key: true |
 | city          | string          | null: false, foreign_key: true |
-| lot_number    | string          | null: false, foreign_key: true |
-| building      | string          | foreign_key: true              |
-| phone_number  | string          | null: false, foreign_key: true |
-| user          | reference       | null: false, foreign_key: true |
+| house_number  | string          | null: false, foreign_key: true |
+| building_name | string          | foreign_key: true              |
+| phone_number  | integer         | null: false, foreign_key: true |
+| item          | reference       | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :user
-- has_many :buying
+- belongs_to :buying
 
 ## buyingsテーブル
 
@@ -67,4 +66,4 @@
 
 - belongs_to :user
 - belongs_to :item
-- belongs_to :address
+- has_one :address
