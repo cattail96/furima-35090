@@ -24,12 +24,12 @@
 | ----------------- | -------------- | ------------------------------ |
 | item_name         | string         | null: false                    |
 | price             | integer        | null: false                    |
-| explanation       | text           | null: false, foreign_key: true |
-| category_id       | string         | null: false, foreign_key: true |
-| condition_id      | string         | null: false, foreign_key: true |
-| delivery_fee_id   | string         | null: false, foreign_key: true |
-| location_id       | string         | null: false, foreign_key: true |
-| delivery_days_id  | string         | null: false, foreign_key: true |
+| explanation       | text           | null: false                    |
+| category_id       | integer        | null: false                    |
+| condition_id      | integer        | null: false                    |
+| delivery_fee_id   | integer        | null: false                    |
+| location_id       | integer        | null: false                    |
+| delivery_days_id  | integer        | null: false                    |
 | user              | reference      | null: false, foreign_key: true |
 
 ### Association
@@ -41,13 +41,13 @@
 
 | Column         | Type            | Options                        |
 | -------------- | --------------- | ------------------------------ |
-| postcode       | string          | null: false, foreign_key: true |
-| prefecture_id  | integer         | null: false, foreign_key: true |
-| city           | string          | null: false, foreign_key: true |
-| house_number   | string          | null: false, foreign_key: true |
-| building_name  | string          | ------------------------------ |
-| phone_number   | string          | null: false, foreign_key: true |
-| buying         | reference       | null: false, foreign_key: true |
+| postcode       | string          | null: false                    |
+| prefecture_id  | integer         | null: false                    |
+| city           | string          | null: false                    |
+| house_number   | string          | null: false                    |
+| building_name  | string          | --                             |
+| phone_number   | string          | null: false                    |
+| buying         | reference       | null: false                                      |
 
 ### Association
 
