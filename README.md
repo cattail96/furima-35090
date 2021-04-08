@@ -24,11 +24,11 @@
 | ----------------- | -------------- | ------------------------------ |
 | item_name         | string         | null: false                    |
 | price             | integer        | null: false                    |
-| explanation       | text           | null: false                    |
+| item_explanation  | text           | null: false                    |
 | category_id       | integer        | null: false                    |
 | condition_id      | integer        | null: false                    |
 | delivery_fee_id   | integer        | null: false                    |
-| location_id       | integer        | null: false                    |
+| prefecture_id     | integer        | null: false                    |
 | delivery_days_id  | integer        | null: false                    |
 | user              | reference      | null: false, foreign_key: true |
 
@@ -47,7 +47,7 @@
 | house_number   | string          | null: false                    |
 | building_name  | string          | --                             |
 | phone_number   | string          | null: false                    |
-| buying         | reference       | null: false                                      |
+| buying         | reference       | null: false, foreign_key: true |
 
 ### Association
 
