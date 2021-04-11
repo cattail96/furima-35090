@@ -73,7 +73,6 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Birthday can't be blank")
       end
 
-
       it 'passwordが5文字以下であれば登録できないこと' do
         @user.password = '12345'
         @user.password_confirmation = '12345'
@@ -114,7 +113,6 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password can't be blank")
       end
-
     end
   end
 end
