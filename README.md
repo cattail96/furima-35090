@@ -6,10 +6,10 @@
 | ------------------- | -------------- | -------------------------- |
 | nick_name           | string         | null: false                |
 | email               | string         | null: false, unique: true  |
-| encrypyed_password  | string         | null: false                |
+| encrypted_password  | string         | null: false                |
 | family_name         | string         | null: false                |
 | first_name          | string         | null: false                |
-| last_name_kana      | string         | null: false                |
+| family_name_kana      | string         | null: false                |
 | first_name_kana     | string         | null: false                |
 | birthday            | date           | null: false                |
 
