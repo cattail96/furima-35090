@@ -107,7 +107,6 @@ RSpec.describe User, type: :model do
       it 'passwordが半角数字だけでは登録できないこと' do
         @user.password = '123456'
         @user.password_confirmation = '123456'
-        binding.pry
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is invalid')
 
