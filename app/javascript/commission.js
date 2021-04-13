@@ -4,7 +4,7 @@ window.addEventListener('load',function(){
   itemPrice.addEventListener("keyup",() => {
     const commissionVal = itemPrice.value;
     const addTaxPrice = document.getElementById("add-tax-price");
-    addTaxPrice.innerHTML = commissionVal * rate;
+    addTaxPrice.innerHTML = Math.floor(commissionVal * rate);
     const Profit = document.getElementById("profit");
     Profit.innerHTML = Math.floor(commissionVal - commissionVal * rate);
   })
