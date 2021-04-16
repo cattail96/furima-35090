@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :search, only: [:show, :edit, :update, :destroy]
+  before_action :find, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
     end
   end
 
-  def search
+  def find
     @item = Item.find(params[:id])
   end
 end
