@@ -68,7 +68,7 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include('Postal code is invalid. Include hyphen(-)')
       end
 
-      it 'phone_numberは11桁以上だと登録できない' do
+      it 'phone_numberは11桁を超えると登録できない' do
         @order_address.phone_number = '123456789012'
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include('Phone number is invalid')
@@ -76,6 +76,12 @@ RSpec.describe OrderAddress, type: :model do
 
       it 'phone_numberは全角数字では登録できない' do
         @order_address.phone_number = '１２３４５６７８９０１'
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include('Phone number is invalid')
+      end
+
+      it 'phone_numberに英字などの数字以外が入っていた場合登録できない' do
+        @order_address.phone_number = 'abcdefghijk'
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include('Phone number is invalid')
       end
