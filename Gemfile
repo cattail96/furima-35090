@@ -71,5 +71,7 @@ gem 'image_processing', '~> 1.2'
 gem 'payjp'
 gem 'pry-rails'
 
-  gem 'rspec-rails', '~> 4.0.0'
-  gem 'factory_bot_rails'
+gem 'rspec-rails', '~> 4.0.0'
+gem 'factory_bot_rails'
+
+gem "aws-sdk-s3", require: false
