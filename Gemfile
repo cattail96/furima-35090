@@ -75,3 +75,7 @@ gem 'rspec-rails', '~> 4.0.0'
 gem 'factory_bot_rails'
 
 gem "aws-sdk-s3", require: false
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
