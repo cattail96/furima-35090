@@ -31,11 +31,15 @@
 | prefecture_id     | integer        | null: false                    |
 | delivery_days_id  | integer        | null: false                    |
 | user              | reference      | null: false, foreign_key: true |
+| tag               | reference      | null: false, foreign_key: true |
+| item_tag_relations| reference      | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
 - has_one :order
+- has_many :tags
+- has_many :item_tag_relations
 
 ## addressesテーブル
 
@@ -65,3 +69,27 @@
 - belongs_to :user
 - belongs_to :item
 - has_one :address
+
+## tagsテーブル
+
+| Column             | Type           | Options                        |
+| ------------------ | -------------- | ------------------------------ |
+| item_tag_relations | reference      | null: false, foreign_key: true |
+| item               | reference      | null: false, foreign_key: true |
+
+### Association
+
+- has_many :item_tag_relations
+- has_many :item
+
+## ItemTagRelationsテーブル
+
+| Column             | Type           | Options                        |
+| ------------------ | -------------- | ------------------------------ |
+| item               | reference      | null: false, foreign_key: true |
+| tag                | reference      | null: false, foreign_key: true |
+
+### Association
+
+ - belongs_to :item
+ - belongs_to :tag
